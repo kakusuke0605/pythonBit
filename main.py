@@ -29,6 +29,7 @@ while True:
         raise
 
     df = df.append({'price': coincheck.last}, ignore_index=True)
+    send_message_to_line(str(coincheck.last))
 
     if len(df) < duration:
         continue
@@ -51,6 +52,7 @@ while True:
             r = coincheck.order(params)
             send_message_to_line(r)
             print('sell!!!')
+            send_message_to_line('sell!!')
     else:
         if df['price'].iloc[-1] < df['-2σ'].iloc[-1]:
             market_buy_amount = coincheck.rate(
@@ -62,4 +64,5 @@ while True:
             r = coincheck.order(params)
             send_message_to_line(r)
             print('buy!!')
+            send_message_to_line("buy!!")
     df = df.iloc[1:, :]

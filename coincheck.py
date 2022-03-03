@@ -33,7 +33,7 @@ class Coincheck(object):
 
         try:
             if method == 'GET':
-                r = requests.get(endpoint, headers=headers, data=params)
+                r = requests.get(endpoint, headers=headers, params=params)
             else:
                 r = requests.post(endpoint, headers=headers, data=body)
         except Exception as e:

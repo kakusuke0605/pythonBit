@@ -48,7 +48,7 @@ while True:
             params = {
                 'order_type': 'market_sell',
                 'pair': 'btc_jpy',
-                'market_buy_amount': position['btc']}
+                'amount': position['btc']}
             r = coincheck.order(params)
             send_message_to_line(r)
             print('sell!!!')

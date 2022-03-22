@@ -64,5 +64,5 @@ while True:
             r = coincheck.order(params)
             send_message_to_line(r)
             print('buy!!')
-            send_message_to_line("buy!!")
+            send_message_to_line('buy!!')
     df = df.iloc[1:, :]
